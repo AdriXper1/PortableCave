@@ -1,0 +1,16 @@
+{
+  "item.portablecave.cave_source": "Cave Source",
+  "item.portablecave.ore_source": "Ore Source",
+
+  "item.portablecave.block_extractor": "Block Extractor",
+  "item.portablecave.ore_extractor": "Ore Extractor",
+  "item.portablecave.block_generator": "Block Generator",
+  "item.portablecave.ore_generator": "Ore Generator",
+
+  "block.portablecave.block_extractor": "Block Extractor",
+  "block.portablecave.ore_extractor": "Ore Extractor",
+  "block.portablecave.block_generator": "Block Generator",
+  "block.portablecave.ore_generator": "Ore Generator",
+
+  "creativeTab.portable_cave": "Portable Cave"
+}

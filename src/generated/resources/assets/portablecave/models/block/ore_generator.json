@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "portablecave:block/machine_front",
+    "side": "portablecave:block/machine_side",
+    "top": "portablecave:block/ore_generator_top"
+  }
+}

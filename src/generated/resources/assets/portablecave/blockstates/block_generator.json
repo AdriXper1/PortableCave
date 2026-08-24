@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "portablecave:block/block_generator",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "portablecave:block/block_generator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "portablecave:block/block_generator"
+    },
+    "facing=south": {
+      "model": "portablecave:block/block_generator",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "portablecave:block/block_generator",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "portablecave:block/block_generator",
+      "y": 270
+    }
+  }
+}

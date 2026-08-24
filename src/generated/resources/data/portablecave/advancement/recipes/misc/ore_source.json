@@ -1,0 +1,120 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ancient_debris": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:ancient_debris"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_coal_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:coal_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:copper_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_diamond_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:diamond_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_emerald_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:emerald_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:gold_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:iron_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lapis_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:lapis_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_redstone_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:redstone_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "portablecave:ore_source"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coal_ores",
+      "has_iron_ores",
+      "has_copper_ores",
+      "has_gold_ores",
+      "has_redstone_ores",
+      "has_emerald_ores",
+      "has_lapis_ores",
+      "has_diamond_ores",
+      "has_ancient_debris"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "portablecave:ore_source"
+    ]
+  }
+}

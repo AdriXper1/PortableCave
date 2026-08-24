@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "minecraft:coal_ores"
+    },
+    {
+      "tag": "minecraft:iron_ores"
+    },
+    {
+      "tag": "minecraft:copper_ores"
+    },
+    {
+      "tag": "minecraft:gold_ores"
+    },
+    {
+      "tag": "minecraft:redstone_ores"
+    },
+    {
+      "tag": "minecraft:emerald_ores"
+    },
+    {
+      "tag": "minecraft:lapis_ores"
+    },
+    {
+      "tag": "minecraft:diamond_ores"
+    },
+    {
+      "item": "minecraft:ancient_debris"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "portablecave:ore_source"
+  }
+}

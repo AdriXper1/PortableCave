@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "portablecave:block/ore_generator",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "portablecave:block/ore_generator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "portablecave:block/ore_generator"
+    },
+    "facing=south": {
+      "model": "portablecave:block/ore_generator",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "portablecave:block/ore_generator",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "portablecave:block/ore_generator",
+      "y": 270
+    }
+  }
+}

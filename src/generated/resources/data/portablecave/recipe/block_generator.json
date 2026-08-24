@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "S": {
+      "item": "portablecave:cave_source"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "ISI",
+    "IRI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "portablecave:block_generator"
+  }
+}
