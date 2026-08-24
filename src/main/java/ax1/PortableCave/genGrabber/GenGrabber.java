@@ -1,6 +1,5 @@
 package ax1.PortableCave.genGrabber;
 
-import ax1.PortableCave.PortableCave;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -19,8 +18,6 @@ public class GenGrabber {
                 .registryOrThrow(Registries.BIOME)){
             biomeGrabberList.add(new BiomeGrabber(biome));
         }
-        PortableCave.LOGGER.info("Biomes fond:" + BiomeGrabber.getNbBiomes());
-        PortableCave.LOGGER.info("Blocks fond:" + BiomeGrabber.getNbBlocks());
     }
 
     public static Block getABlockFromBiome (Biome biome) {

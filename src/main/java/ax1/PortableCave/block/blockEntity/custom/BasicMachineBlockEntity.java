@@ -10,10 +10,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
-public class MachineBlockEntity extends BlockEntity {
+public class BasicMachineBlockEntity extends BlockEntity {
     private final NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
 
-    public MachineBlockEntity(BlockEntityType blockEntityType, BlockPos pos, BlockState state) {
+    public BasicMachineBlockEntity(BlockEntityType blockEntityType, BlockPos pos, BlockState state) {
         super(blockEntityType, pos, state);
     }
 

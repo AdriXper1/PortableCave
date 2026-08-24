@@ -2,10 +2,7 @@ package ax1.PortableCave;
 
 import ax1.PortableCave.block.ModBlock;
 import ax1.PortableCave.block.blockEntity.ModBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.BlockExtractorBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.BlockGeneratorBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.OreExtractorBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.OreGeneratorBlockEntity;
+import ax1.PortableCave.block.blockEntity.custom.*;
 import ax1.PortableCave.genGrabber.GenGrabber;
 import ax1.PortableCave.item.ModItem;
 import ax1.PortableCave.tab.ModTab;
@@ -26,7 +23,6 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(PortableCave.MODID)
 public class PortableCave {
     public static final String MODID = "portablecave";
-
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public PortableCave(IEventBus modEventBus, ModContainer modContainer) {
@@ -54,9 +50,9 @@ public class PortableCave {
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event){
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_EXTRACTOR_BE.get(), BlockExtractorBlockEntity::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_EXTRACTOR_BE.get(), OreExtractorBlockEntity::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_GENERATOR_BE.get(), BlockGeneratorBlockEntity::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_GENERATOR_BE.get(), OreGeneratorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_EXTRACTOR_BE.get(), BlockExtractorBlockEntityBasic::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_EXTRACTOR_BE.get(), OreExtractorBlockEntityBasic::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_GENERATOR_BE.get(), BlockGeneratorBlockEntityBasic::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_GENERATOR_BE.get(), OreGeneratorBlockEntityBasic::getEnergyStorage);
     }
 }

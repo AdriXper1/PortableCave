@@ -1,7 +1,6 @@
 package ax1.PortableCave.block.custom;
 
 import ax1.PortableCave.block.blockEntity.ModBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.BlockGeneratorBlockEntity;
 import ax1.PortableCave.block.blockEntity.custom.CreativeBatterieBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

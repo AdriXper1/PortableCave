@@ -15,7 +15,6 @@ import net.neoforged.neoforge.items.IItemHandler;
 import java.util.Map;
 
 public class CreativeBatterieBlockEntity extends BlockEntity{
-
     public CreativeBatterieBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntity.CREATIVE_BATTERIE_BE.get(), pos, state);
     }
