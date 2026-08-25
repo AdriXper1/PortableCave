@@ -12,54 +12,66 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.ArrayList;
 
 public class BiomeGrabber {
-    private static int nbBiomes = 0;
-    private static int nbBlocks = 0;
+    private int blockMaxSize;
+    private int oreMaxSize;
     private Biome biome;
-    private ArrayList<Block> blockList;
-    private ArrayList<Block> oreList;
+    private ArrayList<FeatureGrabber> blockConfiguration;
+    private ArrayList<FeatureGrabber> oreConfigurations;
 
     public BiomeGrabber (Biome biome) {
-        nbBiomes++;
-        blockList  = new ArrayList<>();
-        oreList    = new ArrayList<>();
+        blockMaxSize = 0;
+        oreMaxSize = 0;
+        blockConfiguration = new ArrayList<>();
+        oreConfigurations  = new ArrayList<>();
         this.biome = biome;
 
         this.findBlocks();
     }
 
     private void findBlocks() {
-        for (HolderSet<PlacedFeature> featuresSets : this.biome.getGenerationSettings().features()){
+        for (HolderSet<PlacedFeature> featuresSets : biome.getGenerationSettings().features()){
             for (Holder<PlacedFeature> featureHolder : featuresSets) {
                 if (featureHolder.value().feature().value().config() instanceof OreConfiguration oreConfig) {
-                    oreConfig.targetStates.forEach(target -> {
-                        if (target.state.is(Tags.Blocks.ORES)){
-                            oreList.add(target.state.getBlock());
-                        }
-                        else {
-                            blockList.add(target.state.getBlock());
-                        }
-                    });
-                    nbBlocks++;
+                    if (oreConfig.targetStates.getFirst().state.is(Tags.Blocks.ORES)){
+                        oreConfigurations.add(new FeatureGrabber(oreConfig, featureHolder.value().placement()));
+                        oreMaxSize += oreConfigurations.getLast().size;
+                    }
+                    else {
+                        blockConfiguration.add(new FeatureGrabber(oreConfig, featureHolder.value().placement()));
+                        blockMaxSize += blockConfiguration.getLast().size;
+                    }
                 }
             }
         }
     }
 
     public Block getABlock () {
-        if (!blockList.isEmpty()){
-            return blockList.get((int) (Math.random() * blockList.size()));
+        if (!blockConfiguration.isEmpty()){
+            int cpt = 0;
+            int rand = (int) (Math.random() * blockMaxSize);
+            for (FeatureGrabber featureGrabber : blockConfiguration){
+                cpt += featureGrabber.size;
+                if (cpt >= rand){
+                    return featureGrabber.getBlock();
+                }
+            }
         }
         return Blocks.COBBLESTONE;
     }
 
     public Block getAnOre () {
-        if (!oreList.isEmpty()){
-            return oreList.get((int) (Math.random() * oreList.size()));
+        if (!oreConfigurations.isEmpty()){
+            int cpt = 0;
+            int rand = (int) (Math.random() * oreMaxSize);
+            for (FeatureGrabber featureGrabber : oreConfigurations){
+                cpt += featureGrabber.size;
+                if (cpt >= rand){
+                    return featureGrabber.getBlock();
+                }
+            }
         }
         return Blocks.COAL_ORE;
     }
 
-    public static int getNbBiomes() {return nbBiomes;}
-    public static int getNbBlocks() {return nbBlocks;}
     public Biome getBiome() {return this.biome;}
 }

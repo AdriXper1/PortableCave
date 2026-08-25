@@ -26,7 +26,7 @@ public class GenGrabber {
                 return biomeGrabber.getABlock();
             }
         }
-        return Blocks.COBBLESTONE;
+        return Blocks.DIRT;
     }
 
     public static Block getAnOreFromBiome (Biome biome) {
@@ -35,14 +35,20 @@ public class GenGrabber {
                 return biomeGrabber.getAnOre();
             }
         }
-        return Blocks.COAL_BLOCK;
+        return Blocks.DIRT;
     }
 
     public static Block getABlock () {
+        if (biomeGrabberList.isEmpty()){
+            return Blocks.DIRT;
+        }
         return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getABlock();
     }
 
     public static Block getAnOre () {
+        if (biomeGrabberList.isEmpty()){
+            return Blocks.DIRT;
+        }
         return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getAnOre();
     }
 }
