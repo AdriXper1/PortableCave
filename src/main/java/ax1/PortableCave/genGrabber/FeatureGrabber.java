@@ -18,17 +18,17 @@ public class FeatureGrabber {
         for (PlacementModifier placementModifier : listPlacementModifiers) {
             if (placementModifier instanceof CountPlacement countPlacement) {
                 size += oreConfiguration.size * countPlacement.count.getMaxValue();
-            } else if (placementModifier instanceof RarityFilter rarityFilter) {
+            }
+            else if (placementModifier instanceof RarityFilter rarityFilter) {
                 size += oreConfiguration.size / rarityFilter.chance;
+            }
+            else {
+                size = oreConfiguration.size;
             }
         }
     }
 
     public Block getBlock () {
         return oreConfiguration.targetStates.getFirst().state.getBlock();
-    }
-
-    public int getSize () {
-        return this.size;
     }
 }
