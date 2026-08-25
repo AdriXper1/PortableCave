@@ -7,8 +7,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
-public class BlockGeneratorBlockEntityBasic extends BasicMachineBlockEntity {
-    public BlockGeneratorBlockEntityBasic(BlockPos pos, BlockState state) {
+public class BlockGeneratorBlockEntity extends BasicMachineBlockEntity {
+    public BlockGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntity.BLOCK_GENERATOR_BE.get(), pos, state);
     }
 

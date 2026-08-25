@@ -50,9 +50,9 @@ public class PortableCave {
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event){
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_EXTRACTOR_BE.get(), BlockExtractorBlockEntityBasic::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_EXTRACTOR_BE.get(), OreExtractorBlockEntityBasic::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_GENERATOR_BE.get(), BlockGeneratorBlockEntityBasic::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_GENERATOR_BE.get(), OreGeneratorBlockEntityBasic::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_EXTRACTOR_BE.get(), BlockExtractorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_EXTRACTOR_BE.get(), OreExtractorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_GENERATOR_BE.get(), BlockGeneratorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_GENERATOR_BE.get(), OreGeneratorBlockEntity::getEnergyStorage);
     }
 }

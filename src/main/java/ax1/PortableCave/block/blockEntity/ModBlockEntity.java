@@ -14,21 +14,21 @@ public class ModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, PortableCave.MODID);
 
-    public static final Supplier<BlockEntityType<BlockExtractorBlockEntityBasic>> BLOCK_EXTRACTOR_BE =
+    public static final Supplier<BlockEntityType<BlockExtractorBlockEntity>> BLOCK_EXTRACTOR_BE =
             BLOCK_ENTITIES.register("block_extractor_be", () -> BlockEntityType.Builder.of(
-                    BlockExtractorBlockEntityBasic::new, ModBlock.BLOCK_EXTRACTOR.get()).build(null));
+                    BlockExtractorBlockEntity::new, ModBlock.BLOCK_EXTRACTOR.get()).build(null));
 
-    public static final Supplier<BlockEntityType<OreExtractorBlockEntityBasic>> ORE_EXTRACTOR_BE =
+    public static final Supplier<BlockEntityType<OreExtractorBlockEntity>> ORE_EXTRACTOR_BE =
             BLOCK_ENTITIES.register("ore_extractor_be", () -> BlockEntityType.Builder.of(
-                    OreExtractorBlockEntityBasic::new, ModBlock.ORE_EXTRACTOR.get()).build(null));
+                    OreExtractorBlockEntity::new, ModBlock.ORE_EXTRACTOR.get()).build(null));
 
-    public static final Supplier<BlockEntityType<BlockGeneratorBlockEntityBasic>> BLOCK_GENERATOR_BE =
+    public static final Supplier<BlockEntityType<BlockGeneratorBlockEntity>> BLOCK_GENERATOR_BE =
             BLOCK_ENTITIES.register("block_generator_be", () -> BlockEntityType.Builder.of(
-                    BlockGeneratorBlockEntityBasic::new, ModBlock.BLOCK_GENERATOR.get()).build(null));
+                    BlockGeneratorBlockEntity::new, ModBlock.BLOCK_GENERATOR.get()).build(null));
 
-    public static final Supplier<BlockEntityType<OreGeneratorBlockEntityBasic>> ORE_GENERATOR_BE =
+    public static final Supplier<BlockEntityType<OreGeneratorBlockEntity>> ORE_GENERATOR_BE =
             BLOCK_ENTITIES.register("ore_generator_be", () -> BlockEntityType.Builder.of(
-                    OreGeneratorBlockEntityBasic::new, ModBlock.ORE_GENERATOR.get()).build(null));
+                    OreGeneratorBlockEntity::new, ModBlock.ORE_GENERATOR.get()).build(null));
 
     public static final Supplier<BlockEntityType<CreativeBatterieBlockEntity>> CREATIVE_BATTERIE_BE =
             BLOCK_ENTITIES.register("creative_batterie_be", () -> BlockEntityType.Builder.of(

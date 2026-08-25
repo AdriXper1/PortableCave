@@ -1,7 +1,7 @@
 package ax1.PortableCave.block.custom;
 
 import ax1.PortableCave.block.blockEntity.ModBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.OreGeneratorBlockEntityBasic;
+import ax1.PortableCave.block.blockEntity.custom.OreGeneratorBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,7 +22,7 @@ public class OreGenerator extends BasicMachine {
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new OreGeneratorBlockEntityBasic(pos, state);
+        return new OreGeneratorBlockEntity(pos, state);
     }
 
     @Override

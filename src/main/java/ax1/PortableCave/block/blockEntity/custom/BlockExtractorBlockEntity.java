@@ -7,15 +7,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
-public class OreExtractorBlockEntityBasic extends BasicMachineBlockEntity {
-    public OreExtractorBlockEntityBasic(BlockPos pos, BlockState state) {
-        super(ModBlockEntity.ORE_EXTRACTOR_BE.get(), pos, state);
+public class BlockExtractorBlockEntity extends BasicMachineBlockEntity {
+    public BlockExtractorBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntity.BLOCK_EXTRACTOR_BE.get(), pos, state);
     }
 
     public void tick(Level level, BlockPos pos, BlockState state, DirectionProperty direction) {
         if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() > 10)
         {
-            level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getAnOreFromBiome(level.getBiome(pos).value()).defaultBlockState());
+            level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getABlockFromBiome(level.getBiome(pos).value()).defaultBlockState());
             energyStorage.extractEnergy(10, false);
         }
     }
