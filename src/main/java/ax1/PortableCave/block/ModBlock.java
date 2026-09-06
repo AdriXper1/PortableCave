@@ -23,6 +23,9 @@ public class ModBlock {
     public static final DeferredBlock<Block> ORE_GENERATOR = BLOCKS.registerBlock("ore_generator",
             (properties) -> new OreGenerator(properties.strength(4f).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block> POWER_GENERATOR = BLOCKS.registerBlock("power_generator",
+            properties -> new PowerGenerator(properties.strength(4f).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> CREATIVE_BATTERIE = BLOCKS.registerBlock("creative_batterie",
             properties -> new CreativeBatterie(BlockBehaviour.Properties.of()));
 

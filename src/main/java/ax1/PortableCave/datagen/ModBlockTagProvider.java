@@ -22,12 +22,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlock.BLOCK_EXTRACTOR.get())
                 .add(ModBlock.ORE_EXTRACTOR.get())
                 .add(ModBlock.BLOCK_GENERATOR.get())
-                .add(ModBlock.ORE_GENERATOR.get());
+                .add(ModBlock.ORE_GENERATOR.get())
+                .add(ModBlock.POWER_GENERATOR.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlock.BLOCK_EXTRACTOR.get())
                 .add(ModBlock.ORE_EXTRACTOR.get())
                 .add(ModBlock.BLOCK_GENERATOR.get())
-                .add(ModBlock.ORE_GENERATOR.get());
+                .add(ModBlock.ORE_GENERATOR.get())
+                .add(ModBlock.POWER_GENERATOR.get());
     }
 }

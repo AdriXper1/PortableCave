@@ -11,7 +11,6 @@ import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
 public class BasicMachineBlockEntity extends BlockEntity {
-    private final NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
 
     public BasicMachineBlockEntity(BlockEntityType blockEntityType, BlockPos pos, BlockState state) {
         super(blockEntityType, pos, state);

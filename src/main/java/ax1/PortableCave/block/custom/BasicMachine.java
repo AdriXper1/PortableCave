@@ -1,12 +1,11 @@
 package ax1.PortableCave.block.custom;
 
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 public abstract class BasicMachine extends BaseEntityBlock {
@@ -29,5 +28,13 @@ public abstract class BasicMachine extends BaseEntityBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
+    }
+
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return (BlockState)state.setValue(BlockStateProperties.HORIZONTAL_FACING, rotation.rotate((Direction)state.getValue(BlockStateProperties.HORIZONTAL_FACING)));
+    }
+
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation((Direction)state.getValue(BlockStateProperties.HORIZONTAL_FACING)));
     }
 }
