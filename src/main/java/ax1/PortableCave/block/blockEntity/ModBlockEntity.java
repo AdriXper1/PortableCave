@@ -30,9 +30,13 @@ public class ModBlockEntity {
             BLOCK_ENTITIES.register("ore_generator_be", () -> BlockEntityType.Builder.of(
                     OreGeneratorBlockEntity::new, ModBlock.ORE_GENERATOR.get()).build(null));
 
-    public static final Supplier<BlockEntityType<CreativeBatterieBlockEntity>> CREATIVE_BATTERIE_BE =
-            BLOCK_ENTITIES.register("creative_batterie_be", () -> BlockEntityType.Builder.of(
-                    CreativeBatterieBlockEntity::new, ModBlock.CREATIVE_BATTERIE.get()).build(null));
+    public static final Supplier<BlockEntityType<PowerGeneratorBlockEntity>> POWER_GENERATOR_BE =
+            BLOCK_ENTITIES.register("power_generator_be", () -> BlockEntityType.Builder.of(
+                    PowerGeneratorBlockEntity::new, ModBlock.POWER_GENERATOR.get()).build(null));
+
+    public static final Supplier<BlockEntityType<CreativeBatteryBlockEntity>> CREATIVE_BATTERY_BE =
+            BLOCK_ENTITIES.register("creative_battery_be", () -> BlockEntityType.Builder.of(
+                    CreativeBatteryBlockEntity::new, ModBlock.CREATIVE_BATTERY.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

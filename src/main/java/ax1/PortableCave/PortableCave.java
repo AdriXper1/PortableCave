@@ -44,7 +44,7 @@ public class PortableCave {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("portablecave starting");
         LOGGER.info("starting block grabber");
         GenGrabber.onServerStarting(event);
     }
@@ -54,5 +54,9 @@ public class PortableCave {
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_EXTRACTOR_BE.get(), OreExtractorBlockEntity::getEnergyStorage);
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_GENERATOR_BE.get(), BlockGeneratorBlockEntity::getEnergyStorage);
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_GENERATOR_BE.get(), OreGeneratorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.POWER_GENERATOR_BE.get(), PowerGeneratorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.CREATIVE_BATTERY_BE.get(), CreativeBatteryBlockEntity::getEnergyStorage);
+
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntity.POWER_GENERATOR_BE.get(), PowerGeneratorBlockEntity::getItemHandler);
     }
 }

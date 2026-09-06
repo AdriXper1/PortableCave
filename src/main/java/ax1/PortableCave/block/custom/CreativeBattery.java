@@ -1,7 +1,7 @@
 package ax1.PortableCave.block.custom;
 
 import ax1.PortableCave.block.blockEntity.ModBlockEntity;
-import ax1.PortableCave.block.blockEntity.custom.CreativeBatterieBlockEntity;
+import ax1.PortableCave.block.blockEntity.custom.CreativeBatteryBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -12,20 +12,20 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CreativeBatterie extends BaseEntityBlock {
-    public static final MapCodec<CreativeBatterie> CODEC = simpleCodec(CreativeBatterie::new);
+public class CreativeBattery extends BaseEntityBlock {
+    public static final MapCodec<CreativeBattery> CODEC = simpleCodec(CreativeBattery::new);
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
 
-    public CreativeBatterie(Properties properties) {
+    public CreativeBattery(Properties properties) {
         super(properties);
     }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new CreativeBatterieBlockEntity(pos, state);
+        return new CreativeBatteryBlockEntity(pos, state);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class CreativeBatterie extends BaseEntityBlock {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, ModBlockEntity.CREATIVE_BATTERIE_BE.get(),
+        return createTickerHelper(blockEntityType, ModBlockEntity.CREATIVE_BATTERY_BE.get(),
                 (level1, blockPos, blockState, blockEntity) -> blockEntity.tick(level1, blockPos, blockState));
     }
 }

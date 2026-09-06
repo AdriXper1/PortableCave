@@ -3,6 +3,7 @@
     "portablecave:block_extractor",
     "portablecave:ore_extractor",
     "portablecave:block_generator",
-    "portablecave:ore_generator"
+    "portablecave:ore_generator",
+    "portablecave:power_generator"
   ]
 }

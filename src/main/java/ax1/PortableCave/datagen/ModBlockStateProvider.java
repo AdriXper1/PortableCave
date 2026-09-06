@@ -28,6 +28,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         directionalMachineWithItem(ModBlock.ORE_EXTRACTOR);
         directionalMachineWithItem(ModBlock.BLOCK_GENERATOR);
         directionalMachineWithItem(ModBlock.ORE_GENERATOR);
+        blockWithItem(ModBlock.POWER_GENERATOR);
+        blockWithItem(ModBlock.CREATIVE_BATTERY);
+    }
+
+    private void blockWithItem(DeferredBlock<?> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
     private void directionalMachineWithItem(DeferredBlock<?> deferredBlock) {

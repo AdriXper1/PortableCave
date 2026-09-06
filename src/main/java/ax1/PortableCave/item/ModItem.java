@@ -18,7 +18,8 @@ public class ModItem {
     public static final DeferredItem<BlockItem> ORE_EXTRACTOR_ITEM = ITEMS.registerSimpleBlockItem("ore_extractor", ModBlock.ORE_EXTRACTOR);
     public static final DeferredItem<BlockItem> BLOCK_GENERATOR_ITEM = ITEMS.registerSimpleBlockItem("block_generator", ModBlock.BLOCK_GENERATOR);
     public static final DeferredItem<BlockItem> ORE_GENERATOR_ITEM = ITEMS.registerSimpleBlockItem("ore_generator", ModBlock.ORE_GENERATOR);
-    public static final DeferredItem<BlockItem> CREATIVE_BATTERIE = ITEMS.registerSimpleBlockItem("creative_batterie", ModBlock.CREATIVE_BATTERIE);
+    public static final DeferredItem<BlockItem> POWER_GENERATOR_ITEM = ITEMS.registerSimpleBlockItem("power_generator", ModBlock.POWER_GENERATOR);
+    public static final DeferredItem<BlockItem> CREATIVE_BATTERY = ITEMS.registerSimpleBlockItem("creative_battery", ModBlock.CREATIVE_BATTERY);
 
     public static void register(IEventBus eventBus) {ITEMS.register(eventBus);}
 }

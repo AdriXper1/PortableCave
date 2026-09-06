@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class BiomeGrabber {
     private int blockMaxSize;
     private int oreMaxSize;
-    private Biome biome;
-    private ArrayList<FeatureGrabber> blockConfiguration;
-    private ArrayList<FeatureGrabber> oreConfigurations;
+    private final Biome biome;
+    private final ArrayList<FeatureGrabber> blockConfiguration;
+    private final ArrayList<FeatureGrabber> oreConfigurations;
 
     public BiomeGrabber (Biome biome) {
         blockMaxSize = 0;
@@ -28,6 +28,7 @@ public class BiomeGrabber {
         this.findBlocks();
     }
 
+    //GRASSY-ASS ROMANO!!!
     private void findBlocks() {
         for (HolderSet<PlacedFeature> featuresSets : biome.getGenerationSettings().features()){
             for (Holder<PlacedFeature> featureHolder : featuresSets) {

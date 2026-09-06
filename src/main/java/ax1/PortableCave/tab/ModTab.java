@@ -24,7 +24,8 @@ public class ModTab {
                 output.accept(ModItem.ORE_EXTRACTOR_ITEM.get());
                 output.accept(ModItem.BLOCK_GENERATOR_ITEM.get());
                 output.accept(ModItem.ORE_GENERATOR_ITEM.get());
-                output.accept(ModItem.CREATIVE_BATTERIE.get());
+                output.accept(ModItem.POWER_GENERATOR_ITEM.get());
+                output.accept(ModItem.CREATIVE_BATTERY.get());
             }).build());
 
     public static void register(IEventBus eventBus) {MOD_TABS.register(eventBus);}

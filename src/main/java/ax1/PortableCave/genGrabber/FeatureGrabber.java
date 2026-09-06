@@ -9,7 +9,7 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import java.util.List;
 
 public class FeatureGrabber {
-    private OreConfiguration oreConfiguration;
+    private final OreConfiguration oreConfiguration;
     public int size;
 
     public FeatureGrabber (OreConfiguration oreConfiguration, List<PlacementModifier> listPlacementModifiers){

@@ -21,13 +21,13 @@ public class BlockExtractor extends BasicMachine {
     }
 
     @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BlockExtractorBlockEntity(pos, state);
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new BlockExtractorBlockEntity(pos, state);
     }
 
     @Override
