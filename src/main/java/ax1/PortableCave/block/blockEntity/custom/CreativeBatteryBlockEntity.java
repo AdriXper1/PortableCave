@@ -17,10 +17,6 @@ public class CreativeBatteryBlockEntity extends BlockEntity{
         public int extractEnergy(int toExtract, boolean simulate) {
             return toExtract;
         }
-        @Override
-        public int receiveEnergy(int toReceive, boolean simulate) {
-            return 0;
-        }
     };
 
     public CreativeBatteryBlockEntity(BlockPos pos, BlockState state) {

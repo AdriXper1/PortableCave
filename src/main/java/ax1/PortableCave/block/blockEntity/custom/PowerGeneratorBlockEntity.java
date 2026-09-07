@@ -1,6 +1,7 @@
 package ax1.PortableCave.block.blockEntity.custom;
 
 import ax1.PortableCave.block.blockEntity.ModBlockEntity;
+import ax1.PortableCave.energie.SmartEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
@@ -15,13 +16,10 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 public class PowerGeneratorBlockEntity extends BlockEntity{
-    public EnergyStorage energyStorage = new EnergyStorage(10000, 100){
-        @Override
-        public int receiveEnergy(int toReceive, boolean simulate) {
-            return 0;
-        }
-    };
+    public SmartEnergyStorage energyStorage = new SmartEnergyStorage(10000, 0, 100);
     private final NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
     private final ItemStackHandler stackHandler = new ItemStackHandler(this.stacks) {
         @Override
@@ -47,7 +45,7 @@ public class PowerGeneratorBlockEntity extends BlockEntity{
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if (0 < energyStorage.receiveEnergy(getBurnTime(stacks.getFirst()), false)) {
+        if (0 < energyStorage.produceEnergie(getBurnTime(stacks.getFirst()), false)) {
             stacks.getFirst().consume(1, null);
         }
 
@@ -58,7 +56,7 @@ public class PowerGeneratorBlockEntity extends BlockEntity{
             IEnergyStorage energyStorage = targetBlockEntity.getLevel().getCapability(Capabilities.EnergyStorage.BLOCK, targetBlockEntity.getBlockPos(), direction.getOpposite());
             if (energyStorage == null) continue;
 
-            energyStorage.receiveEnergy(this.energyStorage.extractEnergy(this.energyStorage.getEnergyStored(), false), false);
+            this.energyStorage.giveEnergie(this.energyStorage.getMaxEnergyStored(), energyStorage, false);
         }
     }
 }
