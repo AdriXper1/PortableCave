@@ -21,7 +21,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlock.BLOCK_GENERATOR.get());
         dropSelf(ModBlock.ORE_GENERATOR.get());
         dropSelf(ModBlock.POWER_GENERATOR.get());
-        dropSelf(ModBlock.CREATIVE_BATTERY.get());
     }
 
     @Override

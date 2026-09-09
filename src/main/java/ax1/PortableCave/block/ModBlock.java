@@ -27,7 +27,7 @@ public class ModBlock {
             properties -> new PowerGenerator(properties.strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CREATIVE_BATTERY = BLOCKS.registerBlock("creative_battery",
-            properties -> new CreativeBattery(BlockBehaviour.Properties.of()));
+            properties -> new CreativeBattery(properties.strength(-1f)));
 
     public static void register(IEventBus eventBus) {BLOCKS.register(eventBus);}
 }

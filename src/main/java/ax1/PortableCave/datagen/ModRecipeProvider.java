@@ -7,7 +7,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -20,24 +19,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.CAVE_SOURCE.get(), 1)
-                .requires(Blocks.STONE)
-                .requires(Blocks.DEEPSLATE)
-                .requires(Blocks.GRANITE)
-                .requires(Blocks.DIORITE)
-                .requires(Blocks.ANDESITE)
-                .requires(Blocks.CALCITE)
-                .requires(Blocks.TUFF)
-                .requires(Blocks.DRIPSTONE_BLOCK)
-                .requires(Blocks.OBSIDIAN)
-                .unlockedBy("has_stone", has(Blocks.STONE))
-                .unlockedBy("has_deepslate", has(Blocks.DEEPSLATE))
-                .unlockedBy("has_granite", has(Blocks.GRANITE))
-                .unlockedBy("has_diorite", has(Blocks.DIORITE))
-                .unlockedBy("has_andesite", has(Blocks.ANDESITE))
-                .unlockedBy("has_calcite", has(Blocks.CALCITE))
-                .unlockedBy("has_tuff", has(Blocks.TUFF))
-                .unlockedBy("has_dripstone_block", has(Blocks.DRIPSTONE_BLOCK))
-                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .requires(Items.STONE)
+                .requires(Items.DEEPSLATE)
+                .requires(Items.GRANITE)
+                .requires(Items.DIORITE)
+                .requires(Items.ANDESITE)
+                .requires(Items.CALCITE)
+                .requires(Items.TUFF)
+                .requires(Items.DRIPSTONE_BLOCK)
+                .requires(Items.OBSIDIAN)
+                .unlockedBy("has_stone", has(Items.STONE))
+                .unlockedBy("has_deepslate", has(Items.DEEPSLATE))
+                .unlockedBy("has_granite", has(Items.GRANITE))
+                .unlockedBy("has_diorite", has(Items.DIORITE))
+                .unlockedBy("has_andesite", has(Items.ANDESITE))
+                .unlockedBy("has_calcite", has(Items.CALCITE))
+                .unlockedBy("has_tuff", has(Items.TUFF))
+                .unlockedBy("has_dripstone_block", has(Items.DRIPSTONE_BLOCK))
+                .unlockedBy("has_obsidian", has(Items.OBSIDIAN))
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.ORE_SOURCE.get(), 1)
@@ -49,7 +48,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ItemTags.EMERALD_ORES)
                 .requires(ItemTags.LAPIS_ORES)
                 .requires(ItemTags.DIAMOND_ORES)
-                .requires(Blocks.ANCIENT_DEBRIS)
+                .requires(Items.ANCIENT_DEBRIS)
                 .unlockedBy("has_coal_ores", has(ItemTags.COAL_ORES))
                 .unlockedBy("has_iron_ores", has(ItemTags.IRON_ORES))
                 .unlockedBy("has_copper_ores", has(ItemTags.COPPER_ORES))
@@ -58,7 +57,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_emerald_ores", has(ItemTags.EMERALD_ORES))
                 .unlockedBy("has_lapis_ores", has(ItemTags.LAPIS_ORES))
                 .unlockedBy("has_diamond_ores", has(ItemTags.DIAMOND_ORES))
-                .unlockedBy("has_ancient_debris", has(Blocks.ANCIENT_DEBRIS))
+                .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.IRON_DRILL.get(), 1)
@@ -86,7 +85,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BN ")
                 .pattern("BBB")
                 .define('N', Items.NETHERITE_INGOT)
-                .define('B', Blocks.DIAMOND_BLOCK)
+                .define('B', Items.DIAMOND_BLOCK)
                 .unlockedBy("has_netherite", has(Items.NETHERITE_INGOT))
                 .unlockedBy("has_diamond_block", has(Items.DIAMOND_BLOCK))
                 .save(recipeOutput);
@@ -97,7 +96,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BBB")
                 .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
                 .define('S', Items.NETHER_STAR)
-                .define('B', Blocks.NETHERITE_BLOCK)
+                .define('B', Items.NETHERITE_BLOCK)
                 .unlockedBy("has_netherite_template", has(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
                 .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
                 .unlockedBy("has_netherite_block", has(Items.NETHERITE_BLOCK))
