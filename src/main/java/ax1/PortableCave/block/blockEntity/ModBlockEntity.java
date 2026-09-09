@@ -19,8 +19,12 @@ public class ModBlockEntity {
                     BlockExtractorBlockEntity::new, ModBlock.BLOCK_EXTRACTOR.get()).build(null));
 
     public static final Supplier<BlockEntityType<OreExtractorBlockEntity>> ORE_EXTRACTOR_BE =
-            BLOCK_ENTITIES.register("ore_extractor_be", () -> BlockEntityType.Builder.of(
-                    OreExtractorBlockEntity::new, ModBlock.ORE_EXTRACTOR.get()).build(null));
+            BLOCK_ENTITIES.register("stone_ore_extractor_be", () -> BlockEntityType.Builder.of(
+                    OreExtractorBlockEntity::new,
+                    ModBlock.ORE_EXTRACTOR_LV1.get(),
+                    ModBlock.ORE_EXTRACTOR_LV2.get(),
+                    ModBlock.ORE_EXTRACTOR_LV3.get(),
+                    ModBlock.ORE_EXTRACTOR_LV4.get()).build(null));
 
     public static final Supplier<BlockEntityType<BlockGeneratorBlockEntity>> BLOCK_GENERATOR_BE =
             BLOCK_ENTITIES.register("block_generator_be", () -> BlockEntityType.Builder.of(

@@ -25,7 +25,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         directionalMachineWithItem(ModBlock.BLOCK_EXTRACTOR);
-        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR);
+        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV1);
+        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV2);
+        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV3);
+        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV4);
         directionalMachineWithItem(ModBlock.BLOCK_GENERATOR);
         directionalMachineWithItem(ModBlock.ORE_GENERATOR);
         blockWithItem(ModBlock.POWER_GENERATOR);

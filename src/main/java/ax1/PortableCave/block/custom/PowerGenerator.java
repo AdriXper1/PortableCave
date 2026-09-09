@@ -16,15 +16,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class PowerGenerator extends BaseEntityBlock {
-    public static final MapCodec<PowerGenerator> CODEC = simpleCodec(PowerGenerator::new);
-
     public PowerGenerator(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -33,13 +26,13 @@ public class PowerGenerator extends BaseEntityBlock {
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
     }
 
-    public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-        BlockEntity blockentity = level.getBlockEntity(pos);
-        return blockentity instanceof MenuProvider ? (MenuProvider)blockentity : null;
+    @Override
+    protected RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
     }
 
     @Override

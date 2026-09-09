@@ -1,6 +1,5 @@
 package ax1.PortableCave.block.custom;
 
-import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;

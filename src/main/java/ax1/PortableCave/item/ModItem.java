@@ -19,7 +19,10 @@ public class ModItem {
     public static final DeferredItem<Item> ORE_SOURCE = ITEMS.registerSimpleItem("ore_source");
 
     public static final DeferredItem<BlockItem> BLOCK_EXTRACTOR_ITEM = ITEMS.registerSimpleBlockItem("block_extractor", ModBlock.BLOCK_EXTRACTOR);
-    public static final DeferredItem<BlockItem> ORE_EXTRACTOR_ITEM = ITEMS.registerSimpleBlockItem("ore_extractor", ModBlock.ORE_EXTRACTOR);
+    public static final DeferredItem<BlockItem> ORE_EXTRACTOR_LV1_ITEM = ITEMS.registerSimpleBlockItem("stone_ore_extractor", ModBlock.ORE_EXTRACTOR_LV1);
+    public static final DeferredItem<BlockItem> ORE_EXTRACTOR_LV2_ITEM = ITEMS.registerSimpleBlockItem("iron_ore_extractor", ModBlock.ORE_EXTRACTOR_LV2);
+    public static final DeferredItem<BlockItem> ORE_EXTRACTOR_LV3_ITEM = ITEMS.registerSimpleBlockItem("diamond_ore_extractor", ModBlock.ORE_EXTRACTOR_LV3);
+    public static final DeferredItem<BlockItem> ORE_EXTRACTOR_LV4_ITEM = ITEMS.registerSimpleBlockItem("netherite_ore_extractor", ModBlock.ORE_EXTRACTOR_LV4);
     public static final DeferredItem<BlockItem> BLOCK_GENERATOR_ITEM = ITEMS.registerSimpleBlockItem("block_generator", ModBlock.BLOCK_GENERATOR);
     public static final DeferredItem<BlockItem> ORE_GENERATOR_ITEM = ITEMS.registerSimpleBlockItem("ore_generator", ModBlock.ORE_GENERATOR);
     public static final DeferredItem<BlockItem> POWER_GENERATOR_ITEM = ITEMS.registerSimpleBlockItem("power_generator", ModBlock.POWER_GENERATOR);

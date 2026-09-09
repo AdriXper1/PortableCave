@@ -14,8 +14,14 @@ public class ModBlock {
     public static final DeferredBlock<Block> BLOCK_EXTRACTOR = BLOCKS.registerBlock("block_extractor",
             properties -> new BlockExtractor(properties.strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> ORE_EXTRACTOR = BLOCKS.registerBlock("ore_extractor",
-            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV1 = BLOCKS.registerBlock("stone_ore_extractor",
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 1));
+    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV2 = BLOCKS.registerBlock("iron_ore_extractor",
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 2));
+    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV3 = BLOCKS.registerBlock("diamond_ore_extractor",
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 3));
+    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV4 = BLOCKS.registerBlock("netherite_ore_extractor",
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 4));
 
     public static final DeferredBlock<Block> BLOCK_GENERATOR = BLOCKS.registerBlock("block_generator",
             properties -> new BlockGenerator(properties.strength(4f).requiresCorrectToolForDrops()));

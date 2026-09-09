@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class PowerGeneratorBlockEntity extends BlockEntity{
-    public SmartEnergyStorage energyStorage = new SmartEnergyStorage(10000, 0, 100);
+    public SmartEnergyStorage energyStorage = new SmartEnergyStorage(10000, 0, 10000);
     private final NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
     private final ItemStackHandler stackHandler = new ItemStackHandler(this.stacks) {
         @Override
@@ -45,7 +45,8 @@ public class PowerGeneratorBlockEntity extends BlockEntity{
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if (0 < energyStorage.produceEnergie(getBurnTime(stacks.getFirst()), false)) {
+        if (getBurnTime(stacks.getFirst()) == energyStorage.produceEnergie(getBurnTime(stacks.getFirst()), true)) {
+            energyStorage.produceEnergie(getBurnTime(stacks.getFirst()), false);
             stacks.getFirst().consume(1, null);
         }
 

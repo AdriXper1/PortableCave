@@ -1,7 +1,10 @@
 {
   "values": [
     "portablecave:block_extractor",
-    "portablecave:ore_extractor",
+    "portablecave:stone_ore_extractor",
+    "portablecave:iron_ore_extractor",
+    "portablecave:diamond_ore_extractor",
+    "portablecave:netherite_ore_extractor",
     "portablecave:block_generator",
     "portablecave:ore_generator",
     "portablecave:power_generator"

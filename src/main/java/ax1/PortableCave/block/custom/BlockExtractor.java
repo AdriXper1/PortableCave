@@ -13,21 +13,19 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockExtractor extends BasicMachine {
-    public static final MapCodec<BlockExtractor> CODEC = simpleCodec(BlockExtractor::new);
-
     public BlockExtractor (Properties properties) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new BlockExtractorBlockEntity(pos, state);
     }
 
     @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BlockExtractorBlockEntity(pos, state);
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
     }
 
     @Override

@@ -13,11 +13,12 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class OreExtractor extends BasicMachine {
-    public static final MapCodec<OreExtractor> CODEC = simpleCodec(OreExtractor::new);
+    public int pickaxePower;
 
-    public OreExtractor (Properties properties) {
+    public OreExtractor (Properties properties, int pickaxePower) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
+        this.pickaxePower = pickaxePower;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class OreExtractor extends BasicMachine {
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
+        return null;
     }
 
     @Override

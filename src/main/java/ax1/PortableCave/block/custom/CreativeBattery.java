@@ -13,12 +13,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class CreativeBattery extends BaseEntityBlock {
-    public static final MapCodec<CreativeBattery> CODEC = simpleCodec(CreativeBattery::new);
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
-
     public CreativeBattery(Properties properties) {
         super(properties);
     }
@@ -26,6 +20,11 @@ public class CreativeBattery extends BaseEntityBlock {
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CreativeBatteryBlockEntity(pos, state);
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
     }
 
     @Override

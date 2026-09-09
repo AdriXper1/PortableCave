@@ -20,14 +20,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlock.BLOCK_EXTRACTOR.get())
-                .add(ModBlock.ORE_EXTRACTOR.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV1.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV2.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV3.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV4.get())
                 .add(ModBlock.BLOCK_GENERATOR.get())
                 .add(ModBlock.ORE_GENERATOR.get())
                 .add(ModBlock.POWER_GENERATOR.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlock.BLOCK_EXTRACTOR.get())
-                .add(ModBlock.ORE_EXTRACTOR.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV1.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV2.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV3.get())
+                .add(ModBlock.ORE_EXTRACTOR_LV4.get())
                 .add(ModBlock.BLOCK_GENERATOR.get())
                 .add(ModBlock.ORE_GENERATOR.get())
                 .add(ModBlock.POWER_GENERATOR.get());

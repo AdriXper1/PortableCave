@@ -29,10 +29,10 @@ public class GenGrabber {
         return Blocks.DIRT;
     }
 
-    public static Block getAnOreFromBiome (Biome biome) {
+    public static Block getAnOreFromBiome (Biome biome, int pickaxePower) {
         for (BiomeGrabber biomeGrabber : biomeGrabberList){
             if (biomeGrabber.getBiome() == biome){
-                return biomeGrabber.getAnOre();
+                return biomeGrabber.getAnOre(pickaxePower);
             }
         }
         return Blocks.DIRT;
@@ -49,6 +49,6 @@ public class GenGrabber {
         if (biomeGrabberList.isEmpty()){
             return Blocks.DIRT;
         }
-        return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getAnOre();
+        return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getAnOre(4);
     }
 }

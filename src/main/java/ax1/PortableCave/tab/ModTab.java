@@ -25,7 +25,10 @@ public class ModTab {
                 output.accept(ModItem.CAVE_SOURCE.get());
                 output.accept(ModItem.ORE_SOURCE.get());
                 output.accept(ModItem.BLOCK_EXTRACTOR_ITEM.get());
-                output.accept(ModItem.ORE_EXTRACTOR_ITEM.get());
+                output.accept(ModItem.ORE_EXTRACTOR_LV1_ITEM.get());
+                output.accept(ModItem.ORE_EXTRACTOR_LV2_ITEM.get());
+                output.accept(ModItem.ORE_EXTRACTOR_LV3_ITEM.get());
+                output.accept(ModItem.ORE_EXTRACTOR_LV4_ITEM.get());
                 output.accept(ModItem.BLOCK_GENERATOR_ITEM.get());
                 output.accept(ModItem.ORE_GENERATOR_ITEM.get());
                 output.accept(ModItem.POWER_GENERATOR_ITEM.get());

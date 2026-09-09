@@ -13,8 +13,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockGenerator extends BasicMachine {
-    public static final MapCodec<BlockGenerator> CODEC = simpleCodec(BlockGenerator::new);
-
     public BlockGenerator (Properties properties) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
@@ -27,7 +25,7 @@ public class BlockGenerator extends BasicMachine {
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
+        return null;
     }
 
     @Override

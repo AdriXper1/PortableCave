@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "portablecave:ore_extractor"
+          "name": "portablecave:netherite_ore_extractor"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "portablecave:blocks/ore_extractor"
+  "random_sequence": "portablecave:blocks/netherite_ore_extractor"
 }
