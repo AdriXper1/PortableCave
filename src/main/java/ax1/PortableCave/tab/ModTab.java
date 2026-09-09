@@ -18,6 +18,10 @@ public class ModTab {
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ModItem.BLOCK_GENERATOR_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
+                output.accept(ModItem.IRON_DRILL.get());
+                output.accept(ModItem.DIAMOND_DRILL.get());
+                output.accept(ModItem.NETHERITE_DRILL.get());
+                output.accept(ModItem.ULTIMATE_DRILL.get());
                 output.accept(ModItem.CAVE_SOURCE.get());
                 output.accept(ModItem.ORE_SOURCE.get());
                 output.accept(ModItem.BLOCK_EXTRACTOR_ITEM.get());

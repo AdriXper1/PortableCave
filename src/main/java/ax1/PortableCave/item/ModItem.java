@@ -11,6 +11,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItem {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PortableCave.MODID);
 
+    public static final DeferredItem<Item> IRON_DRILL = ITEMS.registerSimpleItem("iron_drill");
+    public static final DeferredItem<Item> DIAMOND_DRILL = ITEMS.registerSimpleItem("diamond_drill");
+    public static final DeferredItem<Item> NETHERITE_DRILL = ITEMS.registerSimpleItem("netherite_drill");
+    public static final DeferredItem<Item> ULTIMATE_DRILL = ITEMS.registerSimpleItem("ultimate_drill");
     public static final DeferredItem<Item> CAVE_SOURCE = ITEMS.registerSimpleItem("cave_source");
     public static final DeferredItem<Item> ORE_SOURCE = ITEMS.registerSimpleItem("ore_source");
 

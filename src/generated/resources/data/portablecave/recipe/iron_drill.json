@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:deepslate"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "  I",
+    "DI ",
+    "DDD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "portablecave:iron_drill"
+  }
+}

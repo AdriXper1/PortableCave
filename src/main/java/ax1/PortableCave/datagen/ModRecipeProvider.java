@@ -61,7 +61,49 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_ancient_debris", has(Blocks.ANCIENT_DEBRIS))
                 .save(recipeOutput);
 
-        //TODO, add block and ore extractor after adding the drill
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.IRON_DRILL.get(), 1)
+                .pattern("  I")
+                .pattern("DI ")
+                .pattern("DDD")
+                .define('I', Items.IRON_INGOT)
+                .define('D', Items.DEEPSLATE)
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .unlockedBy("has_deepslate", has(Items.DEEPSLATE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.DIAMOND_DRILL.get(), 1)
+                .pattern("  D")
+                .pattern("BD ")
+                .pattern("BBB")
+                .define('D', Items.DIAMOND)
+                .define('B', Items.IRON_BLOCK)
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.NETHERITE_DRILL.get(), 1)
+                .pattern("  N")
+                .pattern("BN ")
+                .pattern("BBB")
+                .define('N', Items.NETHERITE_INGOT)
+                .define('B', Blocks.DIAMOND_BLOCK)
+                .unlockedBy("has_netherite", has(Items.NETHERITE_INGOT))
+                .unlockedBy("has_diamond_block", has(Items.DIAMOND_BLOCK))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.ULTIMATE_DRILL.get(), 1)
+                .pattern("  T")
+                .pattern("BS ")
+                .pattern("BBB")
+                .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .define('S', Items.NETHER_STAR)
+                .define('B', Blocks.NETHERITE_BLOCK)
+                .unlockedBy("has_netherite_template", has(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
+                .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
+                .unlockedBy("has_netherite_block", has(Items.NETHERITE_BLOCK))
+                .save(recipeOutput);
+
+        //TODO, add  ALL OF the blocks and ores extractors
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlock.BLOCK_GENERATOR.get(), 1)
                 .pattern("IRI")

@@ -13,6 +13,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(ModItem.IRON_DRILL.get());
+        basicItem(ModItem.DIAMOND_DRILL.get());
+        basicItem(ModItem.NETHERITE_DRILL.get());
+        basicItem(ModItem.ULTIMATE_DRILL.get());
         basicItem(ModItem.CAVE_SOURCE.get());
         basicItem(ModItem.ORE_SOURCE.get());
     }

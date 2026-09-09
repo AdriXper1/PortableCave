@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "portablecave:power_generator_item"
+          "name": "portablecave:power_generator"
         }
       ],
       "rolls": 1.0

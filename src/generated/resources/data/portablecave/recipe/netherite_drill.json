@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:diamond_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "  N",
+    "BN ",
+    "BBB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "portablecave:netherite_drill"
+  }
+}
