@@ -123,10 +123,13 @@ public class BiomeGrabber {
 
             //default is 1
             switch (pickaxePower) {
+                case 1 -> rand = (int) (Math.random() * lv1Size);
                 case 2 -> rand = (int) (Math.random() * lv2Size);
                 case 3 -> rand = (int) (Math.random() * lv3Size);
                 case 4 -> rand = (int) (Math.random() * lv4Size);
-                default -> rand = (int) (Math.random() * lv1Size);
+                default -> {
+                    return getABlock();
+                }
             }
             System.out.println("\nmin: " + lv1Size + "\nmax: " + lv4Size + "\ngot: " + rand);
             for (FeatureGrabber featureGrabber : oreConfigurations){

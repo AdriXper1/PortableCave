@@ -2,23 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "D": {
+      "item": "minecraft:deepslate"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
-    },
-    "O": {
-      "item": "portablecave:ore_source"
-    },
-    "S": {
-      "item": "minecraft:stone"
     }
   },
   "pattern": [
-    "SIS",
-    "IOI",
-    "SIS"
+    "DD ",
+    "DI ",
+    "  I"
   ],
   "result": {
     "count": 1,
-    "id": "portablecave:ore_generator"
+    "id": "portablecave:stone_drill"
   }
 }

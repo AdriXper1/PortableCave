@@ -14,17 +14,14 @@ public class ModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, PortableCave.MODID);
 
-    public static final Supplier<BlockEntityType<BlockExtractorBlockEntity>> BLOCK_EXTRACTOR_BE =
-            BLOCK_ENTITIES.register("block_extractor_be", () -> BlockEntityType.Builder.of(
-                    BlockExtractorBlockEntity::new, ModBlock.BLOCK_EXTRACTOR.get()).build(null));
-
-    public static final Supplier<BlockEntityType<OreExtractorBlockEntity>> ORE_EXTRACTOR_BE =
-            BLOCK_ENTITIES.register("ore_extractor_be", () -> BlockEntityType.Builder.of(
+    public static final Supplier<BlockEntityType<OreExtractorBlockEntity>> EXTRACTOR_BE =
+            BLOCK_ENTITIES.register("extractor_be", () -> BlockEntityType.Builder.of(
                     OreExtractorBlockEntity::new,
-                    ModBlock.ORE_EXTRACTOR_LV1.get(),
-                    ModBlock.ORE_EXTRACTOR_LV2.get(),
-                    ModBlock.ORE_EXTRACTOR_LV3.get(),
-                    ModBlock.ORE_EXTRACTOR_LV4.get()).build(null));
+                    ModBlock.STONE_EXTRACTOR.get(),
+                    ModBlock.IRON_EXTRACTOR.get(),
+                    ModBlock.DIAMOND_EXTRACTOR.get(),
+                    ModBlock.NETHERITE_EXTRACTOR.get(),
+                    ModBlock.ULTIMATE_EXTRACTOR.get()).build(null));
 
     public static final Supplier<BlockEntityType<BlockGeneratorBlockEntity>> BLOCK_GENERATOR_BE =
             BLOCK_ENTITIES.register("block_generator_be", () -> BlockEntityType.Builder.of(

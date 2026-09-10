@@ -16,11 +16,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlock.BLOCK_EXTRACTOR.get());
-        dropSelf(ModBlock.ORE_EXTRACTOR_LV1.get());
-        dropSelf(ModBlock.ORE_EXTRACTOR_LV2.get());
-        dropSelf(ModBlock.ORE_EXTRACTOR_LV3.get());
-        dropSelf(ModBlock.ORE_EXTRACTOR_LV4.get());
+        dropSelf(ModBlock.STONE_EXTRACTOR.get());
+        dropSelf(ModBlock.IRON_EXTRACTOR.get());
+        dropSelf(ModBlock.DIAMOND_EXTRACTOR.get());
+        dropSelf(ModBlock.NETHERITE_EXTRACTOR.get());
+        dropSelf(ModBlock.ULTIMATE_EXTRACTOR.get());
         dropSelf(ModBlock.BLOCK_GENERATOR.get());
         dropSelf(ModBlock.ORE_GENERATOR.get());
         dropSelf(ModBlock.POWER_GENERATOR.get());

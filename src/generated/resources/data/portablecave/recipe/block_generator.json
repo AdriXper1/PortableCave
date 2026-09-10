@@ -2,20 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "C": {
+      "item": "portablecave:cave_source"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
     },
-    "R": {
-      "item": "minecraft:redstone"
-    },
     "S": {
-      "item": "portablecave:cave_source"
+      "item": "minecraft:stone"
     }
   },
   "pattern": [
-    "IRI",
-    "ISI",
-    "IRI"
+    "SIS",
+    "ICI",
+    "SIS"
   ],
   "result": {
     "count": 1,

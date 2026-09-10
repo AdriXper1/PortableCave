@@ -1,21 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond_block": {
+    "has_deepslate": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:diamond_block"
+            "items": "minecraft:deepslate"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_netherite": {
+    "has_iron": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:netherite_ingot"
+            "items": "minecraft:iron_ingot"
           }
         ]
       },
@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "portablecave:diamond_drill"
+        "recipe": "portablecave:stone_drill"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,13 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diamond_block",
-      "has_netherite"
+      "has_deepslate",
+      "has_iron"
     ]
   ],
   "rewards": {
     "recipes": [
-      "portablecave:diamond_drill"
+      "portablecave:stone_drill"
     ]
   }
 }

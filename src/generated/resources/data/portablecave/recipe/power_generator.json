@@ -2,23 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
+    "F": {
+      "item": "minecraft:furnace"
     },
-    "O": {
-      "item": "portablecave:ore_source"
+    "R": {
+      "item": "minecraft:redstone"
     },
     "S": {
       "item": "minecraft:stone"
     }
   },
   "pattern": [
-    "SIS",
-    "IOI",
-    "SIS"
+    "SRS",
+    "RFR",
+    "SRS"
   ],
   "result": {
     "count": 1,
-    "id": "portablecave:ore_generator"
+    "id": "portablecave:power_generator"
   }
 }

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "portablecave:block/machine_front",
+    "front": "portablecave:block/diamond_extractor_front",
     "side": "portablecave:block/machine_side",
-    "top": "portablecave:block/block_extractor_top"
+    "top": "portablecave:block/machine_top"
   }
 }

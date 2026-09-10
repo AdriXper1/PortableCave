@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "portablecave:diamond_ore_extractor"
+          "name": "portablecave:stone_extractor"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "portablecave:blocks/diamond_ore_extractor"
+  "random_sequence": "portablecave:blocks/stone_extractor"
 }

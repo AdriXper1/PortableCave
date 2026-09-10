@@ -13,11 +13,11 @@ import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
 public class OreExtractorBlockEntity extends BlockEntity {
-    private EnergyStorage energyStorage;
-    private int pickaxPower;
+    private final EnergyStorage energyStorage;
+    private final int pickaxPower;
 
     public OreExtractorBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntity.ORE_EXTRACTOR_BE.get(), pos, state);
+        super(ModBlockEntity.EXTRACTOR_BE.get(), pos, state);
         this.pickaxPower = getDrillLevel();
         this.energyStorage = new EnergyStorage(1000 * (int)Math.pow(10, pickaxPower), 10 * (int)Math.pow(10, pickaxPower));
     }

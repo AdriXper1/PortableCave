@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "portablecave:block_extractor"
+          "name": "portablecave:iron_extractor"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "portablecave:blocks/block_extractor"
+  "random_sequence": "portablecave:blocks/iron_extractor"
 }

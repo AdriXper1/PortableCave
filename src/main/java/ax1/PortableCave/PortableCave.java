@@ -50,8 +50,7 @@ public class PortableCave {
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event){
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_EXTRACTOR_BE.get(), BlockExtractorBlockEntity::getEnergyStorage);
-        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_EXTRACTOR_BE.get(), OreExtractorBlockEntity::getEnergyStorage);
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.EXTRACTOR_BE.get(), OreExtractorBlockEntity::getEnergyStorage);
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.BLOCK_GENERATOR_BE.get(), BlockGeneratorBlockEntity::getEnergyStorage);
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.ORE_GENERATOR_BE.get(), OreGeneratorBlockEntity::getEnergyStorage);
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ModBlockEntity.POWER_GENERATOR_BE.get(), PowerGeneratorBlockEntity::getEnergyStorage);

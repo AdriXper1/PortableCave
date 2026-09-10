@@ -24,13 +24,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        directionalMachineWithItem(ModBlock.BLOCK_EXTRACTOR);
-        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV1);
-        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV2);
-        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV3);
-        directionalMachineWithItem(ModBlock.ORE_EXTRACTOR_LV4);
-        directionalMachineWithItem(ModBlock.BLOCK_GENERATOR);
-        directionalMachineWithItem(ModBlock.ORE_GENERATOR);
+        directionalExtractorWithItem(ModBlock.STONE_EXTRACTOR);
+        directionalExtractorWithItem(ModBlock.IRON_EXTRACTOR);
+        directionalExtractorWithItem(ModBlock.DIAMOND_EXTRACTOR);
+        directionalExtractorWithItem(ModBlock.NETHERITE_EXTRACTOR);
+        directionalExtractorWithItem(ModBlock.ULTIMATE_EXTRACTOR);
+        directionalGeneratorWithItem(ModBlock.BLOCK_GENERATOR);
+        directionalGeneratorWithItem(ModBlock.ORE_GENERATOR);
         blockWithItem(ModBlock.POWER_GENERATOR);
         blockWithItem(ModBlock.CREATIVE_BATTERY);
     }
@@ -39,7 +39,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
-    private void directionalMachineWithItem(DeferredBlock<?> deferredBlock) {
+    private void directionalExtractorWithItem(DeferredBlock<?> deferredBlock) {
+        ModelFile model = models().orientable(deferredBlock.getRegisteredName(),
+                ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_side"),
+                ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/" + BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath() + "_front"),
+                ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_top"));
+
+        directionalBlock(deferredBlock.get(), model);
+        simpleBlockItem(deferredBlock.get(), model);
+    }
+
+    private void directionalGeneratorWithItem(DeferredBlock<?> deferredBlock) {
         ModelFile model = models().orientable(deferredBlock.getRegisteredName(),
                 ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_side"),
                 ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_front"),

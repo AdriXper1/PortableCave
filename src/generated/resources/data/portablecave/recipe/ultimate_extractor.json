@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "D": {
+      "item": "portablecave:ultimate_drill"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
-    },
-    "O": {
-      "item": "portablecave:ore_source"
     },
     "S": {
       "item": "minecraft:stone"
@@ -14,11 +14,11 @@
   },
   "pattern": [
     "SIS",
-    "IOI",
+    "IDI",
     "SIS"
   ],
   "result": {
     "count": 1,
-    "id": "portablecave:ore_generator"
+    "id": "portablecave:ultimate_extractor"
   }
 }

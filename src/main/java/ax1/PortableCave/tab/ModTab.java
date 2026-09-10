@@ -16,19 +16,20 @@ public class ModTab {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN_TAB = MOD_TABS.register("portable_cave_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("creativeTab.portable_cave"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> ModItem.BLOCK_GENERATOR_ITEM.get().getDefaultInstance())
+            .icon(() -> ModItem.ULTIMATE_EXTRACTOR_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
+                output.accept(ModItem.STONE_DRILL.get());
                 output.accept(ModItem.IRON_DRILL.get());
                 output.accept(ModItem.DIAMOND_DRILL.get());
                 output.accept(ModItem.NETHERITE_DRILL.get());
                 output.accept(ModItem.ULTIMATE_DRILL.get());
                 output.accept(ModItem.CAVE_SOURCE.get());
                 output.accept(ModItem.ORE_SOURCE.get());
-                output.accept(ModItem.BLOCK_EXTRACTOR_ITEM.get());
-                output.accept(ModItem.ORE_EXTRACTOR_LV1_ITEM.get());
-                output.accept(ModItem.ORE_EXTRACTOR_LV2_ITEM.get());
-                output.accept(ModItem.ORE_EXTRACTOR_LV3_ITEM.get());
-                output.accept(ModItem.ORE_EXTRACTOR_LV4_ITEM.get());
+                output.accept(ModItem.STONE_EXTRACTOR_ITEM.get());
+                output.accept(ModItem.IRON_EXTRACTOR_ITEM.get());
+                output.accept(ModItem.DIAMOND_EXTRACTOR_ITEM.get());
+                output.accept(ModItem.NETHERITE_EXTRACTOR_ITEM.get());
+                output.accept(ModItem.ULTIMATE_EXTRACTOR_ITEM.get());
                 output.accept(ModItem.BLOCK_GENERATOR_ITEM.get());
                 output.accept(ModItem.ORE_GENERATOR_ITEM.get());
                 output.accept(ModItem.POWER_GENERATOR_ITEM.get());

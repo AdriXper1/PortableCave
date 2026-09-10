@@ -37,7 +37,7 @@ public class OreExtractor extends BasicMachine {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, ModBlockEntity.ORE_EXTRACTOR_BE.get(),
+        return createTickerHelper(blockEntityType, ModBlockEntity.EXTRACTOR_BE.get(),
                 (level1, blockPos, blockState, blockEntity)
                         -> blockEntity.tick(level1, blockPos, blockState, FACING));
     }

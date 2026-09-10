@@ -3,7 +3,6 @@ package ax1.PortableCave.block;
 import ax1.PortableCave.PortableCave;
 import ax1.PortableCave.block.custom.*;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -11,16 +10,15 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModBlock {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PortableCave.MODID);
 
-    public static final DeferredBlock<Block> BLOCK_EXTRACTOR = BLOCKS.registerBlock("block_extractor",
-            properties -> new BlockExtractor(properties.strength(4f).requiresCorrectToolForDrops()));
-
-    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV1 = BLOCKS.registerBlock("iron_ore_extractor",
-            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 1));
-    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV2 = BLOCKS.registerBlock("diamond_ore_extractor",
+    public static final DeferredBlock<Block> STONE_EXTRACTOR = BLOCKS.registerBlock("stone_extractor",
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 0));
+    public static final DeferredBlock<Block> IRON_EXTRACTOR = BLOCKS.registerBlock("iron_extractor",
             properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 2));
-    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV3 = BLOCKS.registerBlock("netherite_ore_extractor",
+    public static final DeferredBlock<Block> DIAMOND_EXTRACTOR = BLOCKS.registerBlock("diamond_extractor",
             properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 3));
-    public static final DeferredBlock<Block> ORE_EXTRACTOR_LV4 = BLOCKS.registerBlock("ultimate_ore_extractor",
+    public static final DeferredBlock<Block> NETHERITE_EXTRACTOR = BLOCKS.registerBlock("netherite_extractor",
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 4));
+    public static final DeferredBlock<Block> ULTIMATE_EXTRACTOR = BLOCKS.registerBlock("ultimate_extractor",
             properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 4));
 
     public static final DeferredBlock<Block> BLOCK_GENERATOR = BLOCKS.registerBlock("block_generator",
