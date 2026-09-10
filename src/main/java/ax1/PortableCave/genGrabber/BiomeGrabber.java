@@ -15,6 +15,7 @@ import java.util.ArrayList;
 //surely I can optimise this garbage...
 //mhe, it only runs at game start
 public class BiomeGrabber {
+    private int blocksSize;
     private int lv1Size;
     private int lv2Size;
     private int lv3Size;
@@ -24,6 +25,7 @@ public class BiomeGrabber {
     private final ArrayList<FeatureGrabber> oreConfigurations;
 
     public BiomeGrabber (Biome biome) {
+        blocksSize = 0;
         lv1Size = 0;
         lv2Size = 0;
         lv3Size = 0;
@@ -41,6 +43,7 @@ public class BiomeGrabber {
         for (HolderSet<PlacedFeature> featuresSets : biome.getGenerationSettings().features()){
             for (Holder<PlacedFeature> featureHolder : featuresSets) {
                 tempSize = getBlocks(featureHolder, 1);
+                lv1Size += tempSize;
                 lv2Size += tempSize;
                 lv3Size += tempSize;
                 lv4Size += tempSize;
@@ -79,7 +82,7 @@ public class BiomeGrabber {
             }
             else if (getPickaxePower(tempFeatureGrabber) == pickaxPower) {
                 blockConfiguration.add(tempFeatureGrabber);
-                lv1Size += tempFeatureGrabber.size;
+                blocksSize += tempFeatureGrabber.size;
             }
         }
         return tmp;
@@ -102,7 +105,7 @@ public class BiomeGrabber {
     public Block getABlock () {
         if (!blockConfiguration.isEmpty()){
             int cpt = 0;
-            int rand = (int) (Math.random() * lv1Size);
+            int rand = (int) (Math.random() * blocksSize);
             for (FeatureGrabber featureGrabber : blockConfiguration){
                 cpt += featureGrabber.size;
                 if (cpt >= rand){
@@ -118,13 +121,14 @@ public class BiomeGrabber {
             int cpt = 0;
             int rand;
 
-            //default is 2
+            //default is 1
             switch (pickaxePower) {
+                case 2 -> rand = (int) (Math.random() * lv2Size);
                 case 3 -> rand = (int) (Math.random() * lv3Size);
                 case 4 -> rand = (int) (Math.random() * lv4Size);
-                default -> rand = (int) (Math.random() * lv2Size);
+                default -> rand = (int) (Math.random() * lv1Size);
             }
-            System.out.println("\nmin: " + lv2Size + "\nmax: " + lv4Size + "\ngot: " + rand);
+            System.out.println("\nmin: " + lv1Size + "\nmax: " + lv4Size + "\ngot: " + rand);
             for (FeatureGrabber featureGrabber : oreConfigurations){
                 cpt += featureGrabber.size;
                 if (cpt >= rand){
