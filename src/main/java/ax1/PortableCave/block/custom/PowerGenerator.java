@@ -4,8 +4,8 @@ import ax1.PortableCave.block.blockEntity.ModBlockEntity;
 import ax1.PortableCave.block.blockEntity.custom.PowerGeneratorBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.world.MenuProvider;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Containers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
 
 public class PowerGenerator extends BaseEntityBlock {
     public PowerGenerator(Properties properties) {
@@ -33,6 +32,23 @@ public class PowerGenerator extends BaseEntityBlock {
     @Override
     protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
+    }
+
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (blockentity instanceof PowerGeneratorBlockEntity) {
+                if (level instanceof ServerLevel) {
+                    Containers.dropContents(level, pos, (PowerGeneratorBlockEntity)blockentity);
+                }
+
+                super.onRemove(state, level, pos, newState, isMoving);
+                level.updateNeighbourForOutputSignal(pos, this);
+            } else {
+                super.onRemove(state, level, pos, newState, isMoving);
+            }
+        }
     }
 
     @Override

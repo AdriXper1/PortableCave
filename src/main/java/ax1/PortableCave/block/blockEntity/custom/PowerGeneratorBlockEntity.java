@@ -5,23 +5,24 @@ import ax1.PortableCave.energie.SmartEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-
-public class PowerGeneratorBlockEntity extends BlockEntity{
+public class PowerGeneratorBlockEntity extends BaseContainerBlockEntity {
     public SmartEnergyStorage energyStorage = new SmartEnergyStorage(10000, 0, 10000);
-    private final NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
-    private final ItemStackHandler stackHandler = new ItemStackHandler(this.stacks) {
+    private NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
+    private ItemStackHandler stackHandler = new ItemStackHandler(this.stacks) {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return getBurnTime(stack) != 0;
@@ -38,6 +39,31 @@ public class PowerGeneratorBlockEntity extends BlockEntity{
 
     public IItemHandler getItemHandler (Direction side) {
         return this.stackHandler;
+    }
+
+    @Override
+    protected Component getDefaultName() {
+        return null;
+    }
+
+    @Override
+    protected NonNullList<ItemStack> getItems() {
+        return this.stacks;
+    }
+
+    @Override
+    protected void setItems(NonNullList<ItemStack> items) {
+        this.stacks = items;
+    }
+
+    @Override
+    protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
+        return null;
+    }
+
+    @Override
+    public int getContainerSize() {
+        return this.stacks.size();
     }
 
     private int getBurnTime(ItemStack stack) {
@@ -60,4 +86,5 @@ public class PowerGeneratorBlockEntity extends BlockEntity{
             this.energyStorage.giveEnergie(this.energyStorage.getMaxEnergyStored(), energyStorage, false);
         }
     }
+
 }
