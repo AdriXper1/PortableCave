@@ -16,7 +16,6 @@ import java.util.ArrayList;
 //mhe, it only runs at game start
 public class BiomeGrabber {
     private int blocksSize;
-    private int lv1Size;
     private int lv2Size;
     private int lv3Size;
     private int lv4Size;
@@ -26,7 +25,6 @@ public class BiomeGrabber {
 
     public BiomeGrabber (Biome biome) {
         blocksSize = 0;
-        lv1Size = 0;
         lv2Size = 0;
         lv3Size = 0;
         lv4Size = 0;
@@ -43,7 +41,6 @@ public class BiomeGrabber {
         for (HolderSet<PlacedFeature> featuresSets : biome.getGenerationSettings().features()){
             for (Holder<PlacedFeature> featureHolder : featuresSets) {
                 tempSize = getBlocks(featureHolder, 1);
-                lv1Size += tempSize;
                 lv2Size += tempSize;
                 lv3Size += tempSize;
                 lv4Size += tempSize;
@@ -98,7 +95,7 @@ public class BiomeGrabber {
         if (featureGrabber.getBlock().defaultBlockState().is(BlockTags.NEEDS_DIAMOND_TOOL)) {
             return 4;
         }
-        //NEEDS_WOODEN_TOOL
+        //NEEDS_WOODEN_TOOL or less (include non-stone block)
         return 1;
     }
 
@@ -123,7 +120,6 @@ public class BiomeGrabber {
 
             //default is 1
             switch (pickaxePower) {
-                case 1 -> rand = (int) (Math.random() * lv1Size);
                 case 2 -> rand = (int) (Math.random() * lv2Size);
                 case 3 -> rand = (int) (Math.random() * lv3Size);
                 case 4 -> rand = (int) (Math.random() * lv4Size);
@@ -131,7 +127,7 @@ public class BiomeGrabber {
                     return getABlock();
                 }
             }
-            System.out.println("\nmin: " + lv1Size + "\nmax: " + lv4Size + "\ngot: " + rand);
+            System.out.println("\nmin: " + lv2Size + "\nmax: " + lv4Size + "\ngot: " + rand);
             for (FeatureGrabber featureGrabber : oreConfigurations){
                 cpt += featureGrabber.size;
                 if (cpt >= rand){

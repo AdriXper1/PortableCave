@@ -20,35 +20,15 @@ public class GenGrabber {
         }
     }
 
-    public static Block getABlockFromBiome (Biome biome) {
-        for (BiomeGrabber biomeGrabber : biomeGrabberList){
-            if (biomeGrabber.getBiome() == biome){
-                return biomeGrabber.getABlock();
-            }
+    public static Block getAnOre (Biome biome, int pickaxePower) {
+        if (biome == null) {
+            return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getABlock();
         }
-        return Blocks.DIRT;
-    }
-
-    public static Block getAnOreFromBiome (Biome biome, int pickaxePower) {
         for (BiomeGrabber biomeGrabber : biomeGrabberList){
             if (biomeGrabber.getBiome() == biome){
                 return biomeGrabber.getAnOre(pickaxePower);
             }
         }
-        return Blocks.DIRT;
-    }
-
-    public static Block getABlock () {
-        if (biomeGrabberList.isEmpty()){
-            return Blocks.DIRT;
-        }
-        return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getABlock();
-    }
-
-    public static Block getAnOre () {
-        if (biomeGrabberList.isEmpty()){
-            return Blocks.DIRT;
-        }
-        return biomeGrabberList.get((int) (Math.random() * biomeGrabberList.size())).getAnOre(4);
+        return Blocks.GRASS_BLOCK;
     }
 }

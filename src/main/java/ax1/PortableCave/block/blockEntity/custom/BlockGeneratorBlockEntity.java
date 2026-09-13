@@ -25,7 +25,7 @@ public class BlockGeneratorBlockEntity extends BlockEntity {
     public void tick(Level level, BlockPos pos, BlockState state, DirectionProperty direction) {
         if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() > 10)
         {
-            level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getABlock().defaultBlockState());
+            level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getAnOre(null, 0).defaultBlockState());
             energyStorage.extractEnergy(10, false);
         }
     }
