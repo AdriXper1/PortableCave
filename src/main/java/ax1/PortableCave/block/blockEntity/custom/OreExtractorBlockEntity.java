@@ -19,7 +19,7 @@ public class OreExtractorBlockEntity extends BlockEntity {
     public OreExtractorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntity.EXTRACTOR_BE.get(), pos, state);
         this.pickaxPower = getDrillLevel();
-        this.energyStorage = new EnergyStorage(1000 * (int)Math.pow(10, pickaxPower), 10 * (int)Math.pow(10, pickaxPower));
+        this.energyStorage = new EnergyStorage(1000 * (int)Math.pow(10, pickaxPower), 100 * (int)Math.pow(10, pickaxPower));
     }
 
     public int getDrillLevel() {
@@ -35,10 +35,10 @@ public class OreExtractorBlockEntity extends BlockEntity {
     }
 
     public void tick(Level level, BlockPos pos, BlockState state, DirectionProperty direction) {
-        if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() > 10)
+        if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() > 100 * (int)Math.pow(10, pickaxPower))
         {
             level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getAnOre(level.getBiome(pos).value(), pickaxPower).defaultBlockState());
-            energyStorage.extractEnergy(10 * (int)Math.pow(10, pickaxPower), false);
+            energyStorage.extractEnergy(100 * (int)Math.pow(10, pickaxPower), false);
         }
     }
 }

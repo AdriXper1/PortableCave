@@ -11,7 +11,7 @@ public class ModBlock {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PortableCave.MODID);
 
     public static final DeferredBlock<Block> STONE_EXTRACTOR = BLOCKS.registerBlock("stone_extractor",
-            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 0));
+            properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 1));
     public static final DeferredBlock<Block> IRON_EXTRACTOR = BLOCKS.registerBlock("iron_extractor",
             properties -> new OreExtractor(properties.strength(4f).requiresCorrectToolForDrops(), 2));
     public static final DeferredBlock<Block> DIAMOND_EXTRACTOR = BLOCKS.registerBlock("diamond_extractor",
