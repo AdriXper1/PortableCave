@@ -31,15 +31,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         directionalExtractorWithItem(ModBlock.ULTIMATE_EXTRACTOR);
         directionalGeneratorWithItem(ModBlock.BLOCK_GENERATOR);
         directionalGeneratorWithItem(ModBlock.ORE_GENERATOR);
-        blockWithItem(ModBlock.POWER_GENERATOR);
+        LitBlock(ModBlock.POWER_GENERATOR);
         blockWithItem(ModBlock.CREATIVE_BATTERY);
     }
 
-    private void blockWithItem(DeferredBlock<?> deferredBlock) {
+    public void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
-    private void directionalExtractorWithItem(DeferredBlock<?> deferredBlock) {
+    public void directionalExtractorWithItem(DeferredBlock<?> deferredBlock) {
         ModelFile model = models().orientable(deferredBlock.getRegisteredName(),
                 ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_side"),
                 ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/" + BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath() + "_front"),
@@ -49,7 +49,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(deferredBlock.get(), model);
     }
 
-    private void directionalGeneratorWithItem(DeferredBlock<?> deferredBlock) {
+    public void directionalGeneratorWithItem(DeferredBlock<?> deferredBlock) {
         ModelFile model = models().orientable(deferredBlock.getRegisteredName(),
                 ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_side"),
                 ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/machine_front"),
@@ -70,5 +70,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + angleOffset) % 360)
                             .build();
                 });
+    }
+    public void LitBlock(DeferredBlock<?> deferredBlock) {
+        String blockName = BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath();
+
+        ModelFile offModel = models().cubeAll(blockName + "_off", modLoc("block/" + blockName + "_off"));
+        ModelFile onModel  = models().cubeAll(blockName + "_on",  modLoc("block/" + blockName + "_on"));
+
+        /*getVariantBuilder(deferredBlock.get())
+                .forAllStates(state -> {
+                    boolean lit = state.getValue(
+                            BlockStateProperties.LIT
+                    );
+
+                    return ConfiguredModel.builder()
+                            .modelFile(lit ? onModel : offModel)
+                            .build();
+                });*/
+
+        simpleBlockItem(deferredBlock.get(), offModel);
     }
 }
