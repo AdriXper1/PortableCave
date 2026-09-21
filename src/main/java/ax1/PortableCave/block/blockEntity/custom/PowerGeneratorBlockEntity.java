@@ -1,6 +1,7 @@
 package ax1.PortableCave.block.blockEntity.custom;
 
 import ax1.PortableCave.block.blockEntity.ModBlockEntity;
+import ax1.PortableCave.block.custom.PowerGenerator;
 import ax1.PortableCave.energie.SmartEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +11,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -71,10 +71,6 @@ public class PowerGeneratorBlockEntity extends BaseContainerBlockEntity {
         return stack.getItem().getBurnTime(stack, null);
     }
 
-    private boolean isLit() {
-        return this.energyStorage.getEnergyStored() > 0;
-    }
-
     public void tick(Level level, BlockPos pos, BlockState state) {
         if (getBurnTime(stacks.getFirst()) == energyStorage.produceEnergie(getBurnTime(stacks.getFirst()), true)) {
             energyStorage.produceEnergie(getBurnTime(stacks.getFirst()), false);
@@ -92,11 +88,11 @@ public class PowerGeneratorBlockEntity extends BaseContainerBlockEntity {
         }
 
         if (this.energyStorage.getEnergyStored() > 0) {
-            state = state.setValue(AbstractFurnaceBlock.LIT, true);
+            state = state.setValue(PowerGenerator.LIT, true);
         }
         else {
-            state = state.setValue(AbstractFurnaceBlock.LIT, false);
+            state = state.setValue(PowerGenerator.LIT, false);
         }
-        setChanged(level, pos, state);
+        level.setBlockAndUpdate(pos, state);
     }
 }

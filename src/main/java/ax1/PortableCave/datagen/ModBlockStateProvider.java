@@ -2,6 +2,7 @@ package ax1.PortableCave.datagen;
 
 import ax1.PortableCave.PortableCave;
 import ax1.PortableCave.block.ModBlock;
+import ax1.PortableCave.block.custom.PowerGenerator;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -31,8 +32,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         directionalExtractorWithItem(ModBlock.ULTIMATE_EXTRACTOR);
         directionalGeneratorWithItem(ModBlock.BLOCK_GENERATOR);
         directionalGeneratorWithItem(ModBlock.ORE_GENERATOR);
-        LitBlock(ModBlock.POWER_GENERATOR);
         blockWithItem(ModBlock.CREATIVE_BATTERY);
+
+        powerGenerator();
     }
 
     public void blockWithItem(DeferredBlock<?> deferredBlock) {
@@ -71,23 +73,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             .build();
                 });
     }
-    public void LitBlock(DeferredBlock<?> deferredBlock) {
-        String blockName = BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath();
 
-        ModelFile offModel = models().cubeAll(blockName + "_off", modLoc("block/" + blockName + "_off"));
-        ModelFile onModel  = models().cubeAll(blockName + "_on",  modLoc("block/" + blockName + "_on"));
+    public void powerGenerator() {
+        getVariantBuilder(ModBlock.POWER_GENERATOR.get()).forAllStates(state -> {
+            if(state.getValue(PowerGenerator.LIT)) {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("power_generator_on",
+                        ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/" + "power_generator_on")))};
+            } else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("power_generator_off",
+                        ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/" + "power_generator_off")))};
+            }
+        });
 
-        /*getVariantBuilder(deferredBlock.get())
-                .forAllStates(state -> {
-                    boolean lit = state.getValue(
-                            BlockStateProperties.LIT
-                    );
-
-                    return ConfiguredModel.builder()
-                            .modelFile(lit ? onModel : offModel)
-                            .build();
-                });*/
-
-        simpleBlockItem(deferredBlock.get(), offModel);
+        simpleBlockItem(ModBlock.POWER_GENERATOR.get(), models().cubeAll("power_generator_on",
+                ResourceLocation.fromNamespaceAndPath(PortableCave.MODID, "block/" + "power_generator_on")));
     }
 }

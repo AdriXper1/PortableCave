@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "portablecave:block/power_generator"
+    "lit=false": {
+      "model": "portablecave:block/power_generator_off"
+    },
+    "lit=true": {
+      "model": "portablecave:block/power_generator_on"
     }
   }
 }

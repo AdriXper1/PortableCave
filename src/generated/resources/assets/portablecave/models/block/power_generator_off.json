@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "portablecave:block/power_generator"
+    "all": "portablecave:block/power_generator_off"
   }
 }
