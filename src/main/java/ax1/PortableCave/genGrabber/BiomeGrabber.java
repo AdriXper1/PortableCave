@@ -127,16 +127,13 @@ public class BiomeGrabber {
                     return getABlock();
                 }
             }
-            System.out.println("\nmin: " + lv2Size + "\nmax: " + lv4Size + "\ngot: " + rand);
             for (FeatureGrabber featureGrabber : oreConfigurations){
                 cpt += featureGrabber.size;
                 if (cpt >= rand){
-                    System.out.println("\nfound " + featureGrabber.getBlock());
                     return featureGrabber.getBlock();
                 }
             }
         }
-        System.out.println("\nnoting fond: default coal");
         return Blocks.COAL_ORE;
     }
 
