@@ -1,22 +1,20 @@
-To Do List
+Portable Cave
 =
+> [!IMPORTANT]
+> This mod is still in beta stage and can crash or simply not work.\
+> Please, if you find a problem, create an issue in this git repo.
 
-- get the nbt for the drill'n gen battery working
-- make the generator
-- make a conductor block
-- make the drill item
-- balance the crafting recipe
-- balance the battery
-- add height checks
-- add the ultimate gen
-- new textures
-- ~~pih~~
+If you are tired if mining endlessly to find diamonds, 
+or if you want a simple and "balanced" way to automate ore production. 
+This mod Is made for you !
 
-To Maybe ? Do List
-=
+Portable cave add simples generators that scan Minecraft world gen for blocks and ores.\
+Its compatible with any mod using basic ore generation.
 
-- add a cooldown
-- add more terrain gen
-- add sound effects
-- add a nice battery UI
-- ~~start a new mod~~
+Then, you can use the 6 drills tiers to generate them in block form.
+
+Making the drills need 3 block of the highest tier they can produce.\
+This way, you still need a good amount of a resource before you can generate it.
+
+And in case you don't have any way of generating power,
+I added a simple generator whose production depend on its input.
