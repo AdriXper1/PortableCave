@@ -162,20 +162,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlock.BLOCK_GENERATOR.get(), 1)
                 .pattern("SIS")
                 .pattern("ICI")
-                .pattern("SIS")
+                .pattern("SDS")
                 .define('I', Items.IRON_INGOT)
                 .define('S', Items.STONE)
                 .define('C', ModItem.CAVE_SOURCE)
+                .define('D', ModItem.STONE_DRILL)
                 .unlockedBy("has_world_source", has(ModItem.CAVE_SOURCE))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlock.ORE_GENERATOR.get(), 1)
                 .pattern("SIS")
                 .pattern("IOI")
-                .pattern("SIS")
+                .pattern("SDS")
                 .define('I', Items.IRON_INGOT)
                 .define('S', Items.STONE)
                 .define('O', ModItem.ORE_SOURCE)
+                .define('D', ModItem.ULTIMATE_DRILL)
                 .unlockedBy("has_world_source", has(ModItem.ORE_SOURCE))
                 .save(recipeOutput);
 

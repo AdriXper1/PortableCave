@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "D": {
+      "item": "portablecave:ultimate_drill"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
     },
@@ -15,7 +18,7 @@
   "pattern": [
     "SIS",
     "IOI",
-    "SIS"
+    "SDS"
   ],
   "result": {
     "count": 1,

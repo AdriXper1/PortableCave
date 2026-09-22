@@ -5,6 +5,9 @@
     "C": {
       "item": "portablecave:cave_source"
     },
+    "D": {
+      "item": "portablecave:stone_drill"
+    },
     "I": {
       "item": "minecraft:iron_ingot"
     },
@@ -15,7 +18,7 @@
   "pattern": [
     "SIS",
     "ICI",
-    "SIS"
+    "SDS"
   ],
   "result": {
     "count": 1,
