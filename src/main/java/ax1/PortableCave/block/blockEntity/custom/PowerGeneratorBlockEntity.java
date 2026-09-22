@@ -21,12 +21,12 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class PowerGeneratorBlockEntity extends BaseContainerBlockEntity {
-    public SmartEnergyStorage energyStorage = new SmartEnergyStorage(10000, 0, 10000);
+    public SmartEnergyStorage energyStorage = new SmartEnergyStorage(100000000, 0, 100000000);
     private NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
     private ItemStackHandler stackHandler = new ItemStackHandler(this.stacks) {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return getBurnTime(stack) != 0;
+            return getBurnTime(stack) > 0;
         }
     };
 
