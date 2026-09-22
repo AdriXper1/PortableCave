@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:nether_star"
+  },
+  "base": {
+    "item": "portablecave:netherite_drill"
+  },
+  "result": {
+    "count": 1,
+    "id": "portablecave:ultimate_drill"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

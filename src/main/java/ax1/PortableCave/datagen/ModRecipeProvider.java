@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -90,17 +91,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_netherite", has(Items.NETHERITE_INGOT))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.NETHERITE_DRILL.get(), 1)
-                .pattern("BB ")
-                .pattern("BS ")
-                .pattern("  T")
-                .define('B', Items.NETHERITE_BLOCK)
-                .define('S', Items.NETHER_STAR)
-                .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
-                .unlockedBy("has_netherite_block", has(Items.NETHERITE_BLOCK))
-                .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-                .unlockedBy("has_netherite_template", has(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
-                .save(recipeOutput);
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(ModItem.DIAMOND_DRILL),
+                Ingredient.of(Items.NETHERITE_BLOCK),
+                RecipeCategory.MISC,
+                ModItem.NETHERITE_DRILL.get())
+                .unlocks("has_netherite_upgrade_smiting_template", has(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
+                .save(recipeOutput, "netherite_drill_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(ModItem.NETHERITE_DRILL),
+                Ingredient.of(Items.NETHER_STAR),
+                RecipeCategory.MISC,
+                ModItem.ULTIMATE_DRILL.get())
+                .unlocks("has_netherite_upgrade_smiting_template", has(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE))
+                .save(recipeOutput, "ultimate_drill_smithing");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.STONE_EXTRACTOR_ITEM.get(), 1)
                 .pattern("SIS")
