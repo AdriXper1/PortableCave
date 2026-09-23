@@ -12,7 +12,9 @@ import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
 public class BlockGeneratorBlockEntity extends BlockEntity {
-    public EnergyStorage energyStorage = new EnergyStorage(10000, 100);
+    private final int PICKAXE_POWER = 0;
+
+    public EnergyStorage energyStorage = new EnergyStorage(1000 * (int)Math.pow(10, PICKAXE_POWER), 100 * (int)Math.pow(10, PICKAXE_POWER));
 
     public BlockGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntity.BLOCK_GENERATOR_BE.get(), pos, state);
@@ -23,10 +25,10 @@ public class BlockGeneratorBlockEntity extends BlockEntity {
     }
 
     public void tick(Level level, BlockPos pos, BlockState state, DirectionProperty direction) {
-        if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() > 10)
+        if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() >= 100 * (int)Math.pow(10, PICKAXE_POWER))
         {
             level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getAnOre(null, 0).defaultBlockState());
-            energyStorage.extractEnergy(10, false);
+            energyStorage.extractEnergy(100 * (int)Math.pow(10, PICKAXE_POWER), false);
         }
     }
 }

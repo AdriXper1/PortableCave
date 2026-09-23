@@ -35,7 +35,7 @@ public class OreExtractorBlockEntity extends BlockEntity {
     }
 
     public void tick(Level level, BlockPos pos, BlockState state, DirectionProperty direction) {
-        if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() > 100 * (int)Math.pow(10, pickaxPower))
+        if (level.isEmptyBlock(pos.relative(state.getValue(direction))) && energyStorage.getEnergyStored() >= 100 * (int)Math.pow(10, pickaxPower))
         {
             level.setBlockAndUpdate(pos.relative(state.getValue(direction)), GenGrabber.getAnOre(level.getBiome(pos).value(), pickaxPower).defaultBlockState());
             energyStorage.extractEnergy(100 * (int)Math.pow(10, pickaxPower), false);
